@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>API</h1>
+    <script>
+        token = "03ac41323372c84ab3dcecf66ea77746181e035f239e1bc9e7a8b27e0906ca7fe20b9a5ef2da7985337316b4199ea2e9b96c6c8f989c6b901ae9f4ee37f65be01fb20864035a711cde28b2aa6750951ce79abd8b31c57ebc09ec036ef092f430e933882aac27de5f493d4b7b641a3f54eb42adaef9e0f693cfb3c96be6b7ef44"
+        fetch('http://127.0.0.1:1337/api/articles', {
+            headers: {Authorization: `Bearer ${token}`}
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+        })
+    </script>
+
+</body>
+</html>
