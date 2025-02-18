@@ -442,7 +442,7 @@ export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
   collectionName: 'authors';
   info: {
     description: 'Create authors for your content';
-    displayName: 'Author';
+    displayName: 'Auteur';
     pluralName: 'authors';
     singularName: 'author';
   };
@@ -474,7 +474,7 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
   collectionName: 'categories';
   info: {
     description: 'Organize your content into categories';
-    displayName: 'Category';
+    displayName: 'Categorie';
     pluralName: 'categories';
     singularName: 'category';
   };
