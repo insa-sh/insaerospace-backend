@@ -35,10 +35,10 @@
         "videos"
       ]
     },
-    "user": {
+    "author": {
       "type": "relation",
       "relation": "manyToOne",
-      "target": "plugin::users-permissions.user",
+      "target": "api::author.author",
       "inversedBy": "articles"
     },
     "category": {
