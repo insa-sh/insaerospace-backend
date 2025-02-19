@@ -15,12 +15,6 @@
     "name": {
       "type": "string"
     },
-    "articles": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::article.article",
-      "mappedBy": "author"
-    },
     "avatar": {
       "allowedTypes": [
         "images",

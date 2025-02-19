@@ -35,10 +35,10 @@
         "videos"
       ]
     },
-    "author": {
+    "user": {
       "type": "relation",
       "relation": "manyToOne",
-      "target": "api::author.author",
+      "target": "plugin::users-permissions.user",
       "inversedBy": "articles"
     },
     "category": {
@@ -46,10 +46,6 @@
       "relation": "manyToOne",
       "target": "api::category.category",
       "inversedBy": "articles"
-    },
-    "date": {
-      "type": "date",
-      "required": true
     },
     "content": {
       "type": "dynamiczone",
