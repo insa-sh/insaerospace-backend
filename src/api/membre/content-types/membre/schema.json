@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "membres",
+  "info": {
+    "singularName": "membre",
+    "pluralName": "membres",
+    "displayName": "Membre"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "nom": {
+      "type": "string",
+      "required": true
+    },
+    "prenom": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "required": true
+    },
+    "pseudo_insta": {
+      "type": "string"
+    },
+    "pseudo_linkedin": {
+      "type": "string"
+    }
+  }
+}

@@ -18,7 +18,7 @@
     "description": {
       "type": "text",
       "maxLength": 80,
-      "required": true
+      "required": false
     },
     "slug": {
       "type": "uid",
@@ -52,7 +52,8 @@
       "components": [
         "shared.rich-text"
       ],
-      "required": true
+      "required": false,
+      "max": 1
     }
   }
 }

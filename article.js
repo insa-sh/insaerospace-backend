@@ -8,7 +8,7 @@ async function fetchArticles() {
             headers: { Authorization: `Bearer ${token}` }
         });
         const data = await response.json();
-        console.log(data); // Log the entire response to see its structure
+        // console.log(data); // Log the entire response to see its structure
         const articles = data.data; // Access the articles array
         if (Array.isArray(articles)) {
             document.body.innerHTML = articles.map(article => {
