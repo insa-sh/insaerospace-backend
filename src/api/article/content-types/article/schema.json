@@ -41,12 +41,6 @@
       "target": "api::author.author",
       "inversedBy": "articles"
     },
-    "category": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::category.category",
-      "inversedBy": "articles"
-    },
     "content": {
       "type": "dynamiczone",
       "components": [
@@ -54,6 +48,11 @@
       ],
       "required": false,
       "max": 1
+    },
+    "projet": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::projet.projet"
     }
   }
 }
