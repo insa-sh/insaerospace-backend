@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "role_membres",
+  "info": {
+    "singularName": "role-membre",
+    "pluralName": "role-membres",
+    "displayName": "Roles des membres",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "titre": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "titre",
+      "required": true
+    },
+    "pole_role": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::pole-role.pole-role"
+    },
+    "importance": {
+      "type": "integer"
+    }
+  }
+}

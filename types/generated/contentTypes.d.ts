@@ -542,6 +542,7 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
 export interface ApiMembreMembre extends Struct.CollectionTypeSchema {
   collectionName: 'membres';
   info: {
+    description: '';
     displayName: 'Membre';
     pluralName: 'membres';
     singularName: 'membre';
@@ -560,11 +561,43 @@ export interface ApiMembreMembre extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     nom: Schema.Attribute.String & Schema.Attribute.Required;
-    prenom: Schema.Attribute.String & Schema.Attribute.Required;
+    photo_de_profil: Schema.Attribute.Media<'images'>;
     pseudo_insta: Schema.Attribute.String;
     pseudo_linkedin: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
-    slug: Schema.Attribute.UID & Schema.Attribute.Required;
+    role: Schema.Attribute.Relation<'oneToOne', 'api::role-membre.role-membre'>;
+    slug: Schema.Attribute.UID<'nom'> & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPoleRolePoleRole extends Struct.CollectionTypeSchema {
+  collectionName: 'pole_roles';
+  info: {
+    description: '';
+    displayName: 'Poles';
+    pluralName: 'pole-roles';
+    singularName: 'pole-role';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    importance: Schema.Attribute.Integer;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::pole-role.pole-role'
+    > &
+      Schema.Attribute.Private;
+    nom_pole: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'nom_pole'> & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -598,6 +631,41 @@ export interface ApiProjetProjet extends Struct.CollectionTypeSchema {
     nom: Schema.Attribute.String & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID<'nom'> & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiRoleMembreRoleMembre extends Struct.CollectionTypeSchema {
+  collectionName: 'role_membres';
+  info: {
+    description: '';
+    displayName: 'Roles des membres';
+    pluralName: 'role-membres';
+    singularName: 'role-membre';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    importance: Schema.Attribute.Integer;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::role-membre.role-membre'
+    > &
+      Schema.Attribute.Private;
+    pole_role: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::pole-role.pole-role'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'titre'> & Schema.Attribute.Required;
+    titre: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1119,7 +1187,9 @@ declare module '@strapi/strapi' {
       'api::caroussel.caroussel': ApiCarousselCaroussel;
       'api::global.global': ApiGlobalGlobal;
       'api::membre.membre': ApiMembreMembre;
+      'api::pole-role.pole-role': ApiPoleRolePoleRole;
       'api::projet.projet': ApiProjetProjet;
+      'api::role-membre.role-membre': ApiRoleMembreRoleMembre;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;
