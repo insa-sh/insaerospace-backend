@@ -1,3 +1,48 @@
+# Backend INSAerospace avec Strapi
+
+Strapi permet de gérer une base de données, de créer, modifier et publier des articles simplement via une interface graphique moderne.
+
+## Lancer Strapi en local et le connecter au site
+
+
+### 1. Installer les dépendances
+
+```bash
+npm install
+```
+
+### 2. Ajouter le fichier .env à la racine du repo
+
+
+### 3. Lancer Strapi en local
+
+```bash
+npm run develop
+```
+
+### 4. Créer un compte admin
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # 🚀 Getting started with Strapi
 
 Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/dev-docs/cli) (CLI) which lets you scaffold and manage your project in seconds.

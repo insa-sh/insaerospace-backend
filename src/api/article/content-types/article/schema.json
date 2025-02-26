@@ -17,11 +17,13 @@
     },
     "description": {
       "type": "text",
-      "maxLength": 80
+      "maxLength": 80,
+      "required": false
     },
     "slug": {
       "type": "uid",
-      "targetField": "title"
+      "targetField": "title",
+      "required": true
     },
     "cover": {
       "type": "media",
@@ -39,20 +41,18 @@
       "target": "api::author.author",
       "inversedBy": "articles"
     },
-    "category": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::category.category",
-      "inversedBy": "articles"
-    },
-    "blocks": {
+    "content": {
       "type": "dynamiczone",
       "components": [
-        "shared.media",
-        "shared.quote",
-        "shared.rich-text",
-        "shared.slider"
-      ]
+        "shared.rich-text"
+      ],
+      "required": false,
+      "max": 1
+    },
+    "projet": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::projet.projet"
     }
   }
 }
