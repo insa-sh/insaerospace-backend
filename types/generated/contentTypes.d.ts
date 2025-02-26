@@ -641,7 +641,7 @@ export interface ApiRoleMembreRoleMembre extends Struct.CollectionTypeSchema {
   collectionName: 'role_membres';
   info: {
     description: '';
-    displayName: 'Roles des membres';
+    displayName: 'Role';
     pluralName: 'role-membres';
     singularName: 'role-membre';
   };
@@ -652,6 +652,7 @@ export interface ApiRoleMembreRoleMembre extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    emoji_animation: Schema.Attribute.Media<'images'>;
     importance: Schema.Attribute.Integer;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<

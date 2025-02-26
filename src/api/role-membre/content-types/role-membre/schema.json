@@ -4,7 +4,7 @@
   "info": {
     "singularName": "role-membre",
     "pluralName": "role-membres",
-    "displayName": "Roles des membres",
+    "displayName": "Role",
     "description": ""
   },
   "options": {
@@ -27,6 +27,13 @@
     },
     "importance": {
       "type": "integer"
+    },
+    "emoji_animation": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }
