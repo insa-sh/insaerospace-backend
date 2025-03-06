@@ -41,18 +41,14 @@
       "target": "api::author.author",
       "inversedBy": "articles"
     },
-    "content": {
-      "type": "dynamiczone",
-      "components": [
-        "shared.rich-text"
-      ],
-      "required": false,
-      "max": 1
-    },
     "projet": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::projet.projet"
+    },
+    "content": {
+      "type": "richtext",
+      "required": false
     }
   }
 }
