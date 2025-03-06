@@ -3,7 +3,7 @@ import MenuLogo from './extensions/logo-insaerospace.png';
 
 export default {
     config: {
-        locales: ["fr", "en", "es"],
+        locales: ["fr"],
         auth: { // Replace the Strapi logo in auth (login) views
             logo: AuthLogo,
         },
