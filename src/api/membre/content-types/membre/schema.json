@@ -4,29 +4,40 @@
   "info": {
     "singularName": "membre",
     "pluralName": "membres",
-    "displayName": "Membre"
+    "displayName": "Membre",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "attributes": {
-    "nom": {
-      "type": "string",
-      "required": true
-    },
-    "prenom": {
-      "type": "string",
-      "required": true
-    },
     "slug": {
       "type": "uid",
-      "required": true
+      "required": true,
+      "targetField": "nom"
     },
     "pseudo_insta": {
       "type": "string"
     },
     "pseudo_linkedin": {
       "type": "string"
+    },
+    "nom": {
+      "type": "string",
+      "required": true
+    },
+    "photo_de_profil": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "role": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::role-membre.role-membre"
     }
   }
 }

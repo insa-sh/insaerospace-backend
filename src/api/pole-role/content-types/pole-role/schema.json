@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pole_roles",
+  "info": {
+    "singularName": "pole-role",
+    "pluralName": "pole-roles",
+    "displayName": "Poles",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "nom_pole": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "nom_pole",
+      "required": true
+    },
+    "importance": {
+      "type": "integer"
+    }
+  }
+}
