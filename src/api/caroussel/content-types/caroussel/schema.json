@@ -1,5 +1,5 @@
 {
-  "kind": "collectionType",
+  "kind": "singleType",
   "collectionName": "caroussels",
   "info": {
     "singularName": "caroussel",
@@ -14,10 +14,9 @@
     "Images": {
       "type": "media",
       "multiple": true,
-      "required": false,
+      "required": true,
       "allowedTypes": [
-        "images",
-        "files"
+        "images"
       ]
     }
   }

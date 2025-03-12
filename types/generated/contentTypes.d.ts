@@ -470,7 +470,7 @@ export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiCarousselCaroussel extends Struct.CollectionTypeSchema {
+export interface ApiCarousselCaroussel extends Struct.SingleTypeSchema {
   collectionName: 'caroussels';
   info: {
     description: '';
@@ -485,7 +485,7 @@ export interface ApiCarousselCaroussel extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    Images: Schema.Attribute.Media<'images' | 'files', true>;
+    Images: Schema.Attribute.Media<'images', true> & Schema.Attribute.Required;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
