@@ -30,11 +30,6 @@
       "type": "text",
       "required": true
     },
-    "defaultSeo": {
-      "type": "component",
-      "repeatable": false,
-      "component": "shared.seo"
-    },
     "nombredemicrofusees": {
       "type": "integer",
       "required": true,
