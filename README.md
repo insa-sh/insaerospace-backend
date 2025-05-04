@@ -13,6 +13,10 @@ npm install
 
 ### 2. Ajouter le fichier .env à la racine du repo
 
+Ajouter la variable `APP_URL` qui correspond à l'URL derrière laquelle sera servie Strapi. \
+Exemple : `https://monsiteweb/admin` \
+Par défaut : `http://localhost:1337` 
+
 
 ### 3. Lancer Strapi en local
 
