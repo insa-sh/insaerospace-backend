@@ -1,7 +1,7 @@
 export default ({ env }) => ({
   host: env('HOST', '0.0.0.0'),
   port: env.int('PORT', 1337),
-  url: "https://insaerospace.insash.org/manage",
+  url: env('APP_URL', 'http://localhost:1337'), // Utilisation de la variable d'environnement APP_URL
   app: {
     keys: env.array('APP_KEYS'),
   },
