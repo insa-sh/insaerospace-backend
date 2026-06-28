@@ -14,6 +14,7 @@
   "attributes": {
     "siteName": {
       "type": "string",
+      "default": "INSAerospace",
       "required": true
     },
     "favicon": {
@@ -22,12 +23,12 @@
       "required": false,
       "allowedTypes": [
         "images",
-        "files",
-        "videos"
+        "files"
       ]
     },
     "siteDescription": {
       "type": "text",
+      "default": "INSAerospace, c'est l'association de passionnés d'aérospatiale et d'astronomie de l'INSA Hauts-de-France ! ",
       "required": true
     },
     "nombredemicrofusees": {
