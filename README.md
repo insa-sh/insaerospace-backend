@@ -26,7 +26,12 @@ npm run develop
 
 ### 4. Créer un compte admin
 
+`TODO`
 
+
+### Mettre à jour strapi
+
+https://docs.strapi.io/cms/upgrade-tool
 
 
 
